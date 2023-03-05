@@ -1,7 +1,8 @@
 # Executive Summary
 # Introduction
 <div align="justify">
-After completed the Adventure works database in previous project, and applied 
+After completed the [Adventure works relational database](https://github.com/ahvshim/SQL-Project) in previous project,
+and applied 
 SQL queries based on a given scenario that was proposed, now we’d like to develop a 
 No-SQL document-based database using MongoDB Compass application and apply 
 similar aggregations. <br>
