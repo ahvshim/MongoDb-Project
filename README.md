@@ -53,7 +53,7 @@ the Figure 1. Below
 <br>
 ![collections](https://user-images.githubusercontent.com/126220185/222956520-7030b1ed-d8e7-4755-a5d0-ec11166853cb.png)
 
-#Aggregation Pipeline Code
+# Aggregation Pipeline Code
 <div align="justify">
 While SQL queries are written in Structured Query Language (SQL), which is 
 used for relational databases. MongoDB is a NoSQL database and uses a different 
@@ -73,24 +73,24 @@ ascending order
 
 ```mongo
 adventureworks.products.aggregate([
- {
- $project: {
- ProductName: 1,
- ProductCost: 1,
- ProductPrice: 1,
- Profit: {
- $subtract: [
- "$ProductPrice",
- "$ProductCost",
- ],
- },
- },
- },
- {
- $sort: {
- Profit: -1,
- },
- },
+  {
+    $project: {
+      ProductName: 1,
+      ProductCost: 1,
+      ProductPrice: 1,
+      Profit: {
+        $subtract: [
+          "$ProductPrice",
+          "$ProductCost",
+        ],
+      },
+    },
+  },
+  {
+    $sort: {
+      Profit: -1,
+    },
+  },
 ])
 ```
 <br>
