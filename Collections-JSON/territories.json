@@ -1,0 +1,10 @@
+[{"TerritoryKey":1, "Region":"Northwest", "Country":"United States", "Continent":"North America"},
+ {"TerritoryKey":2, "Region":"Northeast", "Country":"United States", "Continent":"North America"},
+ {"TerritoryKey":3, "Region":"Central", "Country":"United States", "Continent":"North America"},
+ {"TerritoryKey":4, "Region":"Southwest", "Country":"United States", "Continent":"North America"},
+ {"TerritoryKey":5, "Region":"Southeast", "Country":"United States", "Continent":"North America"},
+ {"TerritoryKey":6, "Region":"Canada", "Country":"Canada", "Continent":"North America"},
+ {"TerritoryKey":7, "Region":"France", "Country":"France", "Continent":"Europe"},
+ {"TerritoryKey":8, "Region":"Germany", "Country":"Germany", "Continent":"Europe"},
+ {"TerritoryKey":9, "Region":"Australia", "Country":"Australia", "Continent":"Pacific"},
+ {"TerritoryKey":10, "Region":"United Kingdom", "Country":"United Kingdom", "Continent":"Europe"}]
