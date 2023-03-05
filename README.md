@@ -1,7 +1,7 @@
 # Executive Summary
 # Introduction
 <div align="justify">
-After completed the <a href="https://github.com/ahvshim/SQL-Project">Adventure works relational database</a> 
+After completed the <a href="https://github.com/ahvshim/SQL-Project" target="_blank">Adventure works relational database</a> 
 in previous project,and applied SQL queries based on a given scenario that was proposed,
 now we’d like to develop a 
 No-SQL document-based database using MongoDB Compass application and apply 
@@ -52,3 +52,46 @@ involves our nine tables we discussed above. These collections can be summarized
 the Figure 1. Below
 <br>
 ![collections](https://user-images.githubusercontent.com/126220185/222956520-7030b1ed-d8e7-4755-a5d0-ec11166853cb.png)
+
+#Aggregation Pipeline Code
+<div align="justify">
+While SQL queries are written in Structured Query Language (SQL), which is 
+used for relational databases. MongoDB is a NoSQL database and uses a different 
+query language, MongoDB Query Language (MQL).
+</div>
+<br>
+<div align="justify">
+Before obtaining any aggregation stages, we created indexes on fields that we 
+will frequently search, sort, or group by within our collections. By creating an index 
+on these fields, MongoDB will use the index to locate the relevant documents for the 
+query, which will result in faster query execution times. As we are using similar 
+queries to those in SQL project, these fields are equivalent to Primary Keys.
+</div>
+<br>
+1.  Find all the products profit and identify them by their names in 
+ascending order
+
+```mongo
+adventureworks.products.aggregate([
+ {
+ $project: {
+ ProductName: 1,
+ ProductCost: 1,
+ ProductPrice: 1,
+ Profit: {
+ $subtract: [
+ "$ProductPrice",
+ "$ProductCost",
+ ],
+ },
+ },
+ },
+ {
+ $sort: {
+ Profit: -1,
+ },
+ },
+])
+```
+<br>
+![query 1](https://user-images.githubusercontent.com/126220185/222957434-fe62aa35-53bf-484e-a65e-b8d51a6bf3db.png)
