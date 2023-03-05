@@ -94,4 +94,5 @@ adventureworks.products.aggregate([
 ])
 ```
 <br>
+
 ![query 1](https://user-images.githubusercontent.com/126220185/222957434-fe62aa35-53bf-484e-a65e-b8d51a6bf3db.png)
