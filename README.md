@@ -96,3 +96,61 @@ adventureworks.products.aggregate([
 <br>
 
 ![query 1](https://user-images.githubusercontent.com/126220185/222957434-fe62aa35-53bf-484e-a65e-b8d51a6bf3db.png)
+
+2.  List all the customers that their annual income is less than 20,000 and bought products in 2015.
+
+```mongo
+adventureworks.sales.aggregate([
+  {
+    $lookup: {
+      from: "products",
+      localField: "ProductKey",
+      foreignField: "ProductKey",
+      as: "product_info",
+    },
+  },
+  {
+    $unwind: "$product_info",
+  },
+  {
+    $lookup: {
+      from: "customers",
+      localField: "CustomerKey",
+      foreignField: "CustomerKey",
+      as: "customer_info",
+    },
+  },
+  {
+    $unwind: "$customer_info",
+  },
+  {
+    $match: {
+      "customer_info.AnnualIncome": {
+        $lt: 20000,
+      },
+    },
+  },
+  {
+    $addFields: {
+      OrderDate: {
+        $toDate: "$OrderDate",
+      },
+    },
+  },
+  {
+    $project: {
+      FirstName: "$customer_info.FirstName",
+      LastName: "$customer_info.LastName",
+      AnnualIncome: "$customer_info.AnnualIncome",
+      ProductName: "$product_info.ProductName",
+      Year: {
+        $year: "$OrderDate",
+      },
+    },
+  },
+])
+```
+<br>
+
+![query 2](https://user-images.githubusercontent.com/126220185/222957659-4e238eff-a365-4a43-bbc0-b73ccb484e4d.png)
+
