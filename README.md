@@ -1,5 +1,5 @@
 # Executive Summary
-# Selected Dataset
+# Introduction
 <div align="justify">
 After completed the Adventure works database in previous project, and applied 
 SQL queries based on a given scenario that was proposed, now we’d like to develop a 
@@ -44,8 +44,10 @@ The "returns", “customers” and "territories" tables have been stored as a
 separate collections and referenced from the "sales" collection. While the table 
 “calendar” was excluded as now we have the dates in sales collection.
 </div>
+
 However, as we had ten different tables in SQL database, now we only have 
 five collections in our document-based database named “adventureworks” that 
 involves our nine tables we discussed above. These collections can be summarized in 
 the Figure 1. Below
+<br>
 ![collections](https://user-images.githubusercontent.com/126220185/222956520-7030b1ed-d8e7-4755-a5d0-ec11166853cb.png)
